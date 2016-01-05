@@ -57,6 +57,6 @@ class PractitionersController < ApplicationController
 
   private
   def practitioner_params
-    params.require(:practitioner).permit(:name, :bio, :address, :phone, :email, :attached_image, :body, :logo, :background_image)
+    params.require(:practitioner).permit(:name, :bio, :address, :phone, :email, :attached_image, :body, :logo, :background_image, :appointment_info, :current_news)
   end
 end

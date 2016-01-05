@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105083109) do
+ActiveRecord::Schema.define(version: 20160105085904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20160105083109) do
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
     t.string   "phone"
+    t.string   "appointment_info"
+    t.string   "current_news"
   end
 
   create_table "services", force: :cascade do |t|
