@@ -1,0 +1,21 @@
+<% render "layouts/errors", :object => @service %>
+
+<h1>Update your services</h1>
+
+<%= bootstrap_form_for @service do |f| %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.text_area :description, label: "Describe this service" %>
+  <br>
+  <%= f.text_field :cost, label: "How much does it cost?" %>
+  <br>
+  <%= f.text_field :duration, label: "How long does a session last (in minutes)?" %>
+  <br>
+  <%= f.file_field :attached_image, label: "Add an image of the service (optional)" %>
+  <%= f.submit "Submit", class: "btn btn-success" %>
+<% end %>
+<br>
+<p><%= link_to 'Delete this service', service_path(@service),
+  :data => {:confirm => "Are you sure you want to delete this service?",
+  :method => "delete"} %></p>
+<p><%= link_to "Return to home page", practitioners_path %></p>

@@ -1,0 +1,5 @@
+<% if @practitioner.present? %>
+  <%= image_tag(@practitioner.attached_image) %>
+  <h3>About <%= @practitioner.name %></h3>
+  <%= @practitioner.bio %>
+<% end %>

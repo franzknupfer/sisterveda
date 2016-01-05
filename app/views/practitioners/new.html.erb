@@ -1,0 +1,27 @@
+<% render "layouts/errors", :object => @practitioner %>
+
+<h1>Customize your website</h1>
+
+<div class="form">
+  <%= bootstrap_form_for @practitioner do |f| %>
+    <h3>Business contact info</h3>
+    <p>This information will go on your contact page.</p>
+    <%= f.text_field :name, label: "Name" %>
+    <%= f.text_field :address, label: "Address" %>
+    <%= f.text_field :phone, label: "Phone number" %>
+    <%= f.text_field :email, label: "Email" %>
+
+    <h3>Home page</h3>
+    <p>This includes a background image, your logo, and any text you'd like to have on your landing page.</p>
+    <%= f.text_area :body, label: "Text for your landing page" %>
+    <%= f.file_field :background_image, label: "Landing page image" %>
+    <%= f.file_field :logo, label: "Logo" %>
+
+    <h3>About page</h3>
+    <p>Your bio goes on your about page along with a picture of you.</p>
+    <%= f.text_area :bio, label: "Add a bio for your about page" %>
+    <%= f.file_field :attached_image, label: "A picture of you" %>
+
+    <%= f.submit "Submit", class: "btn btn-success" %>
+  <% end %>
+</div>
