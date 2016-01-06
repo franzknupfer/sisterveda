@@ -1,14 +1,12 @@
-<div class="textbox">
-  <h1>Services</h1>
+<h1>Services</h1>
 
-  <% if @services.any? %>
-    <% @services.each do |service| %>
-      <%= image_tag(service.attached_image) %>
-      <h3><%= service.name %>  <%= service.duration %> minutes  $<%= service.cost %></h3>
-      <p><%= markdown(service.description) %></p>
-      <%= link_to "Edit service", edit_service_path(service) %>
-    <% end %>
+<% if @services.any? %>
+  <% @services.each do |service| %>
+    <%= image_tag(service.attached_image) %>
+    <h3><%= service.name %>  <%= service.duration %> minutes  $<%= service.cost %></h3>
+    <p><%= markdown(service.description) %></p>
+    <%= link_to "Edit service", edit_service_path(service) %>
   <% end %>
+<% end %>
 
-  <h3><%= link_to "Add a service", new_service_path %></h3>
-</div>
+<h3><%= link_to "Add a service", new_service_path %></h3>

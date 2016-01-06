@@ -1,15 +1,13 @@
-<div class="textbox">
-  <% if @practitioner.present? %>
-    <p><%= @practitioner.name %></p>
-    <p><%= @practitioner.phone %></p>
-    <p><%= @practitioner.email %></p>
-    <p><%= @practitioner.address %></p>
+<% if @practitioner.present? %>
+  <p><%= @practitioner.name %></p>
+  <p><%= @practitioner.phone %></p>
+  <p><%= @practitioner.email %></p>
+  <p><%= @practitioner.address %></p>
 
-    <%= link_to "Edit contact info", edit_practitioner_path(@practitioner) %>
+  <%= link_to "Edit contact info", edit_practitioner_path(@practitioner) %>
 
-  <% else %>
+<% else %>
 
-    <h3>Your contact information will go here once you <%= link_to "customize your business profile.", new_practitioner_path %></h3>
+  <h3>Your contact information will go here once you <%= link_to "customize your business profile.", new_practitioner_path %></h3>
 
-  <% end %>
-</div>
+<% end %>

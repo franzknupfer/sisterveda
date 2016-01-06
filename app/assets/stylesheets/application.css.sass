@@ -17,22 +17,83 @@
 @import bootstrap-sprockets
 @import bootstrap
 
+html
+  position: relative
+  min-height: 100%
+
 body
-  padding-top: 50px
-  padding-left: 10px
-  padding-right: 10px
+  margin: 0
+  margin-bottom: 150px
 
-#home
-  background-image: url("herbs.jpg")
-  position: absolute
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-
-#textbox
-  margin-top: 200px
-  background-color: white
-  width: 100%
+.main
+  height: auto
+  padding-bottom: 40px
+  margin-left: auto
+  margin-right: auto
+  width: 95%
   text-align: center
-  padding: 30px
+  padding-top: 300px
+
+.footer
+  position: absolute
+  left: 0
+  bottom: 0
+  height: 150px
+  width: 100%
+
+#header_image
+  background-image: url("header.jpg")
+  background-color: #EEEEEE
+  height: 200px
+  width: 100%
+  left: 0
+  position: absolute
+
+#footer_image
+  background-image: url("footer.jpg")
+  height: 150px
+  width: 100%
+  left: 0
+  position: absolute
+
+#nav_bar
+  width: 100%
+  left: 0
+  position: absolute
+
+#nav_bar ul
+  list-style: none
+  margin: 0
+  padding: 0
+  display: block
+
+#nav_bar ul li
+  display: inline-block
+  text-align: center
+  width: 24%
+
+#nav_bar.align-center ul
+  text-align: center
+
+#nav_bar ul li a
+  color: #EEEEEE
+  text-decoration: none
+  display: block
+  padding-top: 90px
+  font-family: 'Open Sans', sans-serif
+  font-weight: 700
+  text-transform: uppercase
+  font-size: 18px
+
+#nav_bar ul li a:hover
+  color: #F4B350
+
+  a
+    color: #F4B350
+
+  a:hover
+    color: #434E3C
+    font-weight: bold
+
+  a:link
+    text-decoration: none
