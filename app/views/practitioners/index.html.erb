@@ -1,14 +1,16 @@
-<% if @practitioner.present? %>
-  <% if @practitioner.logo.present? %>
-    <%= image_tag(@practitioner.logo) %>
+<div class="textbox">
+  <% if @practitioner.present? %>
+    <% if @practitioner.logo.present? %>
+      <div id="logo"><%= image_tag(@practitioner.logo) %></div>
+    <% end %>
+    <p>
+      <%= markdown(@practitioner.current_news) %>
+    </p>
+    <p>
+      <%= markdown(@practitioner.body) %>
+    </p>
+  <% else %>
+    <h3>Welcome to your new website. <%= link_to "Please configure your business profile.", new_practitioner_path %></h3>
   <% end %>
-  <h3><%= @practitioner.name %></h3>
-  <p>
-    <%= @practitioner.body %>
-  </p>
-<% else %>
-  <h3>Welcome to your new website. <%= link_to "Please configure your business profile.", new_practitioner_path %></h3>
-<% end %>
-
-
-<h3><%= link_to "Update your profile", edit_practitioner_path(@practitioner) %></h3>
+  <h3><%= link_to "Update your profile", edit_practitioner_path(@practitioner) %></h3>
+</div>

@@ -1,5 +1,7 @@
-<% if @practitioner.present? %>
-  <%= image_tag(@practitioner.attached_image) %>
-  <h3>About <%= @practitioner.name %></h3>
-  <%= @practitioner.bio %>
-<% end %>
+<div class="textbox">
+  <% if @practitioner.present? %>
+    <div id="about_picture"><%= image_tag(@practitioner.attached_image) %></div>
+    <h3>About <%= @practitioner.name %></h3>
+    <%= markdown(@practitioner.bio) %>
+  <% end %>
+</div>

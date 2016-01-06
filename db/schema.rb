@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105085904) do
+ActiveRecord::Schema.define(version: 20160106012100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,6 @@ ActiveRecord::Schema.define(version: 20160105085904) do
     t.string   "attached_image_content_type"
     t.integer  "attached_image_file_size"
     t.datetime "attached_image_updated_at"
-    t.string   "header1"
-    t.string   "header2"
-    t.string   "header3"
     t.string   "body"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
@@ -40,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160105085904) do
     t.string   "phone"
     t.string   "appointment_info"
     t.string   "current_news"
+    t.string   "tagline"
   end
 
   create_table "services", force: :cascade do |t|

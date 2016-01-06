@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'paperclip'
 
+gem 'redcarpet'
+
 gem 'gmaps4rails'
 
 gem 'geocoder'
