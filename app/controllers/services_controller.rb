@@ -1,11 +1,14 @@
 class ServicesController < ApplicationController
+  include AdminHelper
 
   def index
     @services = Service.all
   end
 
   def new
-    @service = Service.new
+    if admin?
+      @service = Service.new
+    end
   end
 
   def create
@@ -20,7 +23,9 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.find(params[:id])
+    if admin?
+      @service = Service.find(params[:id])
+    end
   end
 
   def update
