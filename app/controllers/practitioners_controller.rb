@@ -1,4 +1,5 @@
 class PractitionersController < ApplicationController
+  include AdminHelper
 
   def index
     @practitioner = Practitioner.first
@@ -6,6 +7,15 @@ class PractitionersController < ApplicationController
 
   def contact
     @practitioner = Practitioner.first
+    @hash = Gmaps4rails.build_markers(@practitioner) do |practitioner, marker|
+      marker.lat practitioner.latitude
+      marker.lng practitioner.longitude
+      marker.picture({
+        url: "#{view_context.image_path("map_marker.png") }",
+                width: "64",
+                height: "64"
+          })
+    end
   end
 
   def about
@@ -32,7 +42,7 @@ class PractitionersController < ApplicationController
   end
 
   def edit
-    if (Practitioner.all.length === 1)
+    if (Practitioner.all.length === 1) && admin?
       @practitioner = Practitioner.first
     else
       redirect_to practitioners_path

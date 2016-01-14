@@ -1,10 +1,28 @@
+<h1>Contact</h1>
 <% if @practitioner.present? %>
   <p><%= @practitioner.name %></p>
   <p><%= @practitioner.phone %></p>
   <p><%= @practitioner.email %></p>
   <p><%= @practitioner.address %></p>
+  <p>Portland, Oregon</p>
 
-  <%= link_to "Edit contact info", edit_practitioner_path(@practitioner) %>
+  <div id="map_container">
+    <div id="map"></div>
+  </div>
+
+  <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(14);
+    });
+  </script>
+
+  <% if admin? %>
+    <%= link_to "Edit contact info", edit_practitioner_path(@practitioner) %>
+  <% end %>
 
 <% else %>
 
