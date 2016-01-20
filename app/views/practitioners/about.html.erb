@@ -1,5 +1,11 @@
+<h1>About</h1>
 <% if @practitioner.present? %>
-  <div id="about_picture"><%= image_tag(@practitioner.attached_image) %></div>
-  <h3>About <%= @practitioner.name %></h3>
-  <%= markdown(@practitioner.bio) %>
+  <% if @practitioner.attached_image? %>
+    <div id="about_picture"><%= image_tag(@practitioner.attached_image) %></div>
+  <% end %>
+  <% if @practitioner.bio? %>
+    <%= markdown(@practitioner.bio) %>
+  <% end %>
+<% else %>
+  <h3>Welcome to your new website. Information about you will go here once you <%= link_to "configure your business profile.", new_practitioner_path %></h3>
 <% end %>

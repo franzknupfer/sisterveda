@@ -9,6 +9,8 @@
       <%= link_to "Edit service", edit_service_path(service) %>
     <% end %>
   <% end %>
+<% else %>
+  <h3>Welcome to your new website. Information about your services will go here once you <%= link_to "add some services.", new_service_path %></h3>
 <% end %>
 
 <% if admin? %>

@@ -8,6 +8,8 @@ class ServicesController < ApplicationController
   def new
     if admin?
       @service = Service.new
+    else
+      redirect_to new_practitioner_path
     end
   end
 
