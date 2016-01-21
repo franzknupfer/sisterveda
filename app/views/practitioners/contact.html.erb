@@ -21,7 +21,9 @@
   </script>
 
   <% if admin? %>
-    <%= link_to "Edit contact info", edit_practitioner_path(@practitioner) %>
+    <% if @practitioner.present? %>
+      <%= link_to "Edit contact info", edit_practitioner_path(@practitioner) %>
+    <% end %>
   <% end %>
 
 <% else %>

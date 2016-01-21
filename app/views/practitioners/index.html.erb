@@ -16,5 +16,7 @@
   <h3>Welcome to your new website. <%= link_to "Please configure your business profile.", new_practitioner_path %></h3>
 <% end %>
 <% if admin? %>
-  <h3><%= link_to "Update your profile", edit_practitioner_path(@practitioner) %></h3>
+    <% if @practitioner.present? %>
+      <h3><%= link_to "Update your profile", edit_practitioner_path(@practitioner) %></h3>
+    <% end %>
 <% end %>
