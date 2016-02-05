@@ -5,11 +5,13 @@
 <%= bootstrap_form_for @service do |f| %>
   <%= f.text_field :name %>
   <br>
+  <%= f.number_field :order %>
+  <br>
   <%= f.text_area :description, label: "Describe this service" %>
   <br>
-  <%= f.text_field :cost, label: "How much does it cost?" %>
+  <%= f.number_field :cost, label: "How much does it cost?" %>
   <br>
-  <%= f.text_field :duration, label: "How long does a session last (in minutes)?" %>
+  <%= f.number_field :duration, label: "How long does a session last (in minutes)?" %>
   <br>
   <%= f.file_field :attached_image, label: "Add an image of the service (optional)" %>
   <%= f.submit "Submit", class: "btn btn-success" %>

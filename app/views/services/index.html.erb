@@ -1,6 +1,7 @@
 <h1>Services</h1>
 
 <% if @services.any? %>
+  <% @services.order(order: :desc) %>
   <% @services.each do |service| %>
     <% if service.attached_image.present? %>
       <%= image_tag(service.attached_image) %>
