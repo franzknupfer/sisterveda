@@ -2,8 +2,10 @@
 
 <% if @services.any? %>
   <% @services.each do |service| %>
-    <%= image_tag(service.attached_image) %>
-    <h3><%= service.name %>  <%= service.duration %> minutes  $<%= service.cost %></h3>
+    <% if service.attached_image.present? %>
+      <%= image_tag(service.attached_image) %>
+    <% end %>
+    <h3><%= service.name %></h3>
     <p><%= markdown(service.description) %></p>
     <% if admin? %>
       <%= link_to "Edit service", edit_service_path(service) %>
