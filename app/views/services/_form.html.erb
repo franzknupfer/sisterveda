@@ -14,6 +14,8 @@
   <%= f.number_field :duration, label: "How long does a session last (in minutes)?" %>
   <br>
   <%= f.file_field :attached_image, label: "Add an image of the service (optional)" %>
+  <%= f.check_box(:delete_image) %>
+  <br>
   <%= f.submit "Submit", class: "btn btn-success" %>
 <% end %>
 <br>

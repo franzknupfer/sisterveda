@@ -18,12 +18,15 @@
       <%= f.text_area :body, label: "Text for your landing page" %>
       <%= f.text_area :current_news, label: "Updates, specials, current news (Optional: this information will go just below your logo on your landing page)" %>
       <%= f.file_field :background_image, label: "Landing page image" %>
+      <%= f.check_box(:delete_background_image) %>
       <%= f.file_field :logo, label: "Logo" %>
+      <%= f.check_box(:delete_logo) %>
 
       <h3>About page</h3>
       <p>Your bio goes on your about page along with a picture of you.</p>
       <%= f.text_area :bio, label: "Add a bio for your about page" %>
       <%= f.file_field :attached_image, label: "A picture of you" %>
+      <%= f.check_box(:delete_attached_image) %>
 
       <%= f.submit "Submit", class: "btn btn-success" %>
     <% end %>

@@ -1,5 +1,15 @@
 class Practitioner < ActiveRecord::Base
 
+  attr_accessor :delete_attached_image
+  attr_accessor :delete_background_image
+  attr_accessor :delete_logo
+
+  before_validation { attached_image.clear if delete_attached_image === '1' }
+
+  before_validation { background_image.clear if delete_background_image === '1' }
+
+  before_validation { logo.clear if delete_logo === '1' }
+
   validates :name, :presence => true
 
   def full_address
