@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   include AdminHelper
 
   def index
-    @services = Service.all
+    @services = Service.order(:order)
   end
 
   def new
