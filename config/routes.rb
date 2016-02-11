@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/about" => "practitioners#about"
   resources :practitioners
   resources :services
+  resources :pictures, only: [:index, :new, :create, :destroy]
 end

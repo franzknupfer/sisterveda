@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205001909) do
+ActiveRecord::Schema.define(version: 20160210225734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "name"
+    t.string   "alt_text"
+    t.string   "markdown_image_file_name"
+    t.string   "markdown_image_content_type"
+    t.integer  "markdown_image_file_size"
+    t.datetime "markdown_image_updated_at"
+  end
 
   create_table "practitioners", force: :cascade do |t|
     t.string   "name"

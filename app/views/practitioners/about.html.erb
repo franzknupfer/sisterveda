@@ -1,6 +1,6 @@
 <h1>About</h1>
 <% if @practitioner.present? %>
-  <% if @practitioner.attached_image? %>
+  <% if @practitioner.attached_image.present? %>
     <div id="about_picture"><%= image_tag(@practitioner.attached_image) %></div>
   <% end %>
   <% if @practitioner.bio? %>

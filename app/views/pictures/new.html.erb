@@ -1,0 +1,14 @@
+<% render "layouts/errors", :object => @picture %>
+
+<h1>Add a picture</h1>
+
+<%= bootstrap_form_for @picture do |f| %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.text_field :alt_text, label: "Add alt text" %>
+  <br>
+  <%= f.file_field :markdown_image %>
+  <br>
+  <%= f.submit "Submit", class: "btn btn-success" %>
+<% end %>
+<p><%= link_to "Return to pictures page", pictures_path %></p>

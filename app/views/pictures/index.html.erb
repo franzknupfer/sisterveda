@@ -1,0 +1,20 @@
+<h1>Images for Markdown</h1>
+
+<% if @pictures.any? %>
+  <table>
+    <% @pictures.each do |picture| %>
+      <tbody>
+        <tr>
+          <td><%= image_tag picture.markdown_image.url(:thumb) %></td>
+          <td><strong><%= picture.name %></strong></td>
+          <td><%= picture.markdown_image.url %></td>
+          <td><%= link_to 'X', picture_path(picture.id),
+            :data => {:confirm => "Are you sure you want to delete this picture?",
+            :method => "delete"} %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+<% end %>
+
+<%= link_to "Add a new image", new_picture_path %>

@@ -18,5 +18,6 @@
 <% if admin? %>
     <% if @practitioner.present? %>
       <h3><%= link_to "Update your profile", edit_practitioner_path(@practitioner) %></h3>
+      <h3><%= link_to "See your pictures for Markdown", pictures_path %></h3>
     <% end %>
 <% end %>
