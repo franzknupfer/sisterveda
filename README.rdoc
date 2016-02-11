@@ -1,28 +1,26 @@
-== README
+== Sister Veda README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a custom Rails CMS for an Ayurvedic practitioner. It uses Ruby, Rails, PostgreSQL for the backend database, Heroku for hosting the site and Amazon AWS S3 for asset hosting.
 
-Things you may want to cover:
+Sister Veda uses the following gems:
 
-* Ruby version
+* Devise for authentication
 
-* System dependencies
+* Paperclip for adding images and attachments
 
-* Configuration
+* Redcarpet for adding Markdown to fields
 
-* Database creation
+* Sass and Bootstrap for styling
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* GMap4Rails and Geocoder for a map with custom address marker
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Future functionality will include:
+
+* Stripe payment options
+
+* Log-in for users to download and upload intake forms and pay for services
+
+* Appointment scheduling
+
+* Mailer functionality
